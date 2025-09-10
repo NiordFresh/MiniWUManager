@@ -1,3 +1,5 @@
+![main](https://github.com/user-attachments/assets/eb4eb16a-f053-4ce3-9bb4-f5e80a43af18)
+
 # MiniWUManager
 MiniWUManager is a lightweight and portable tool for Windows systems that gives you full control over Windows Update.
 Built with C# and WinForms, it provides a simple GUI to manage updates without the hassle of digging through system settings or group policies.
@@ -10,7 +12,7 @@ Update Modes – Easily switch between different Windows Update policies (auto, 
 Driver & Feature Updates – Block driver updates or lock Windows on a specific release version.
 Portable – No installation required. Just run the executable and manage updates instantly.
 
-# 🖥️ Why MiniWUManager?
+# Why MiniWUManager?
 
 Windows Update doesn’t always respect your workflow. With MiniWUManager, you decide when and how updates happen.
 It’s the perfect tool for power users, system administrators, and anyone who wants peace of mind while staying in control of their system.
