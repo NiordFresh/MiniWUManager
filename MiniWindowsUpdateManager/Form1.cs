@@ -17,6 +17,7 @@ namespace MiniWindowsUpdateManager
         private Size orgSize;
         private bool msgInit = true;
 
+
         public MiniWindowsUpdateManager()
         {
             InitializeComponent();
@@ -25,6 +26,9 @@ namespace MiniWindowsUpdateManager
             this.Width = 320;
             this.Height = 280;
             orgSize = this.Size;
+            applybutton.FlatStyle = FlatStyle.Flat;
+            applybutton.FlatAppearance.BorderSize = 0;
+
             this.Load += MiniWindowsUpdateManager_Load;
 
         }
@@ -364,7 +368,10 @@ namespace MiniWindowsUpdateManager
             }
         }
 
+        private void MiniWindowsUpdateManager_Load_1(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

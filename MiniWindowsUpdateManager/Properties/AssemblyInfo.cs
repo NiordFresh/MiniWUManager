@@ -1,17 +1,18 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("MiniWindowsUpdateManager")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("MiniWUManager (Canary)")]
+[assembly: AssemblyDescription("MiniWUManager is a lightweight, portable tool for Windows systems that allows you to have full control over Windows Update.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MiniWindowsUpdateManager")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("https://github.com/NiordFresh/MiniWUManager")]
+[assembly: AssemblyProduct("MiniWUManager (Canary)")]
+[assembly: AssemblyCopyright("Created by NiordFresh <3")]
+[assembly: AssemblyTrademark("https://github.com/NiordFresh/MiniWUManager")]
 [assembly: AssemblyCulture("")]
 
 // Ustawienie elementu ComVisible na wartość false sprawia, że typy w tym zestawie są niewidoczne
@@ -29,5 +30,6 @@ using System.Runtime.InteropServices;
 //      Numer kompilacji
 //      Poprawka
 //
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.25.09.17")]
+[assembly: AssemblyFileVersion("0.25.09.17")]
+[assembly: NeutralResourcesLanguage("en")]
