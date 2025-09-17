@@ -2,15 +2,9 @@
 {
     partial class MiniWindowsUpdateManager
     {
-        /// <summary>
-        /// Wymagana zmienna projektanta.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Wyczyść wszystkie używane zasoby.
-        /// </summary>
-        /// <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
+    
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -28,6 +22,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniWindowsUpdateManager));
             this.mainLabel = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -39,12 +34,13 @@
             this.doSvcBox = new System.Windows.Forms.CheckBox();
             this.bitsBox = new System.Windows.Forms.CheckBox();
             this.updateMode = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mainLabel
             // 
             this.mainLabel.AutoSize = true;
-            this.mainLabel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.mainLabel.ForeColor = System.Drawing.Color.White;
             this.mainLabel.Location = new System.Drawing.Point(17, 13);
             this.mainLabel.Name = "mainLabel";
             this.mainLabel.Size = new System.Drawing.Size(144, 13);
@@ -54,7 +50,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
             this.checkBox1.Location = new System.Drawing.Point(212, 9);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(75, 17);
@@ -74,19 +70,22 @@
             // 
             // applybutton
             // 
+            this.applybutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.applybutton.FlatAppearance.BorderSize = 0;
+            this.applybutton.ForeColor = System.Drawing.Color.White;
             this.applybutton.Location = new System.Drawing.Point(18, 203);
             this.applybutton.Name = "applybutton";
             this.applybutton.Size = new System.Drawing.Size(269, 23);
             this.applybutton.TabIndex = 7;
             this.applybutton.Text = "Apply";
-            this.applybutton.UseVisualStyleBackColor = true;
+            this.applybutton.UseVisualStyleBackColor = false;
             this.applybutton.Click += new System.EventHandler(this.button1_Click);
             // 
             // featureUpdateBox
             // 
             this.featureUpdateBox.AutoSize = true;
-            this.featureUpdateBox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.featureUpdateBox.Location = new System.Drawing.Point(20, 303);
+            this.featureUpdateBox.ForeColor = System.Drawing.Color.White;
+            this.featureUpdateBox.Location = new System.Drawing.Point(18, 314);
             this.featureUpdateBox.Name = "featureUpdateBox";
             this.featureUpdateBox.Size = new System.Drawing.Size(130, 17);
             this.featureUpdateBox.TabIndex = 9;
@@ -97,8 +96,8 @@
             // secondLabel
             // 
             this.secondLabel.AutoSize = true;
-            this.secondLabel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.secondLabel.Location = new System.Drawing.Point(17, 244);
+            this.secondLabel.ForeColor = System.Drawing.Color.White;
+            this.secondLabel.Location = new System.Drawing.Point(15, 262);
             this.secondLabel.Name = "secondLabel";
             this.secondLabel.Size = new System.Drawing.Size(58, 13);
             this.secondLabel.TabIndex = 13;
@@ -107,8 +106,8 @@
             // driverUpdateBox
             // 
             this.driverUpdateBox.AutoSize = true;
-            this.driverUpdateBox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.driverUpdateBox.Location = new System.Drawing.Point(20, 326);
+            this.driverUpdateBox.ForeColor = System.Drawing.Color.White;
+            this.driverUpdateBox.Location = new System.Drawing.Point(18, 337);
             this.driverUpdateBox.Name = "driverUpdateBox";
             this.driverUpdateBox.Size = new System.Drawing.Size(122, 17);
             this.driverUpdateBox.TabIndex = 15;
@@ -119,8 +118,8 @@
             // wuauservBox
             // 
             this.wuauservBox.AutoSize = true;
-            this.wuauservBox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.wuauservBox.Location = new System.Drawing.Point(20, 349);
+            this.wuauservBox.ForeColor = System.Drawing.Color.White;
+            this.wuauservBox.Location = new System.Drawing.Point(18, 360);
             this.wuauservBox.Name = "wuauservBox";
             this.wuauservBox.Size = new System.Drawing.Size(188, 17);
             this.wuauservBox.TabIndex = 16;
@@ -131,8 +130,8 @@
             // doSvcBox
             // 
             this.doSvcBox.AutoSize = true;
-            this.doSvcBox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.doSvcBox.Location = new System.Drawing.Point(20, 372);
+            this.doSvcBox.ForeColor = System.Drawing.Color.White;
+            this.doSvcBox.Location = new System.Drawing.Point(18, 383);
             this.doSvcBox.Name = "doSvcBox";
             this.doSvcBox.Size = new System.Drawing.Size(175, 17);
             this.doSvcBox.TabIndex = 17;
@@ -143,8 +142,8 @@
             // bitsBox
             // 
             this.bitsBox.AutoSize = true;
-            this.bitsBox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.bitsBox.Location = new System.Drawing.Point(20, 395);
+            this.bitsBox.ForeColor = System.Drawing.Color.White;
+            this.bitsBox.Location = new System.Drawing.Point(18, 406);
             this.bitsBox.Name = "bitsBox";
             this.bitsBox.Size = new System.Drawing.Size(166, 17);
             this.bitsBox.TabIndex = 18;
@@ -154,6 +153,8 @@
             // 
             // updateMode
             // 
+            this.updateMode.BackColor = System.Drawing.Color.Black;
+            this.updateMode.ForeColor = System.Drawing.Color.White;
             this.updateMode.FormattingEnabled = true;
             this.updateMode.Items.AddRange(new object[] {
             "Never check for updates",
@@ -161,11 +162,21 @@
             "Automatically download and notify for installation",
             "Automatically download and install at a scheduled time",
             "Required automatic updates (Windows Enterprise)"});
-            this.updateMode.Location = new System.Drawing.Point(20, 260);
+            this.updateMode.Location = new System.Drawing.Point(18, 278);
             this.updateMode.Name = "updateMode";
             this.updateMode.Size = new System.Drawing.Size(267, 21);
             this.updateMode.TabIndex = 19;
             this.updateMode.SelectedIndexChanged += new System.EventHandler(this.updateMode_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.label1.Location = new System.Drawing.Point(171, 439);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Created by NiordFresh <3";
             // 
             // MiniWindowsUpdateManager
             // 
@@ -173,6 +184,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(304, 461);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.updateMode);
             this.Controls.Add(this.bitsBox);
             this.Controls.Add(this.doSvcBox);
@@ -184,8 +196,10 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.mainLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MiniWindowsUpdateManager";
             this.Text = "MiniWUManager";
+            this.Load += new System.EventHandler(this.MiniWindowsUpdateManager_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +218,7 @@
         private System.Windows.Forms.CheckBox doSvcBox;
         private System.Windows.Forms.CheckBox bitsBox;
         private System.Windows.Forms.ComboBox updateMode;
+        private System.Windows.Forms.Label label1;
     }
 }
 

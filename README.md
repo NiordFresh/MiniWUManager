@@ -1,4 +1,4 @@
-![main](https://github.com/user-attachments/assets/eb4eb16a-f053-4ce3-9bb4-f5e80a43af18)
+![main](https://github.com/user-attachments/assets/54d3310e-b116-4258-806e-94bc7be7bbab)
 
 # MiniWUManager
 MiniWUManager is a lightweight and portable tool for Windows systems that gives you full control over Windows Update.
