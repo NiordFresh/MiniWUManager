@@ -35,6 +35,7 @@
             this.bitsBox = new System.Windows.Forms.CheckBox();
             this.updateMode = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.transparent = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // mainLabel
@@ -85,7 +86,7 @@
             // 
             this.featureUpdateBox.AutoSize = true;
             this.featureUpdateBox.ForeColor = System.Drawing.Color.White;
-            this.featureUpdateBox.Location = new System.Drawing.Point(18, 314);
+            this.featureUpdateBox.Location = new System.Drawing.Point(18, 300);
             this.featureUpdateBox.Name = "featureUpdateBox";
             this.featureUpdateBox.Size = new System.Drawing.Size(130, 17);
             this.featureUpdateBox.TabIndex = 9;
@@ -97,7 +98,7 @@
             // 
             this.secondLabel.AutoSize = true;
             this.secondLabel.ForeColor = System.Drawing.Color.White;
-            this.secondLabel.Location = new System.Drawing.Point(15, 262);
+            this.secondLabel.Location = new System.Drawing.Point(15, 248);
             this.secondLabel.Name = "secondLabel";
             this.secondLabel.Size = new System.Drawing.Size(58, 13);
             this.secondLabel.TabIndex = 13;
@@ -107,7 +108,7 @@
             // 
             this.driverUpdateBox.AutoSize = true;
             this.driverUpdateBox.ForeColor = System.Drawing.Color.White;
-            this.driverUpdateBox.Location = new System.Drawing.Point(18, 337);
+            this.driverUpdateBox.Location = new System.Drawing.Point(154, 300);
             this.driverUpdateBox.Name = "driverUpdateBox";
             this.driverUpdateBox.Size = new System.Drawing.Size(122, 17);
             this.driverUpdateBox.TabIndex = 15;
@@ -119,7 +120,7 @@
             // 
             this.wuauservBox.AutoSize = true;
             this.wuauservBox.ForeColor = System.Drawing.Color.White;
-            this.wuauservBox.Location = new System.Drawing.Point(18, 360);
+            this.wuauservBox.Location = new System.Drawing.Point(18, 332);
             this.wuauservBox.Name = "wuauservBox";
             this.wuauservBox.Size = new System.Drawing.Size(188, 17);
             this.wuauservBox.TabIndex = 16;
@@ -131,7 +132,7 @@
             // 
             this.doSvcBox.AutoSize = true;
             this.doSvcBox.ForeColor = System.Drawing.Color.White;
-            this.doSvcBox.Location = new System.Drawing.Point(18, 383);
+            this.doSvcBox.Location = new System.Drawing.Point(18, 355);
             this.doSvcBox.Name = "doSvcBox";
             this.doSvcBox.Size = new System.Drawing.Size(175, 17);
             this.doSvcBox.TabIndex = 17;
@@ -143,7 +144,7 @@
             // 
             this.bitsBox.AutoSize = true;
             this.bitsBox.ForeColor = System.Drawing.Color.White;
-            this.bitsBox.Location = new System.Drawing.Point(18, 406);
+            this.bitsBox.Location = new System.Drawing.Point(18, 378);
             this.bitsBox.Name = "bitsBox";
             this.bitsBox.Size = new System.Drawing.Size(166, 17);
             this.bitsBox.TabIndex = 18;
@@ -162,7 +163,7 @@
             "Automatically download and notify for installation",
             "Automatically download and install at a scheduled time",
             "Required automatic updates (Windows Enterprise)"});
-            this.updateMode.Location = new System.Drawing.Point(18, 278);
+            this.updateMode.Location = new System.Drawing.Point(18, 264);
             this.updateMode.Name = "updateMode";
             this.updateMode.Size = new System.Drawing.Size(267, 21);
             this.updateMode.TabIndex = 19;
@@ -178,12 +179,25 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Created by NiordFresh <3";
             // 
+            // transparent
+            // 
+            this.transparent.AutoSize = true;
+            this.transparent.ForeColor = System.Drawing.Color.White;
+            this.transparent.Location = new System.Drawing.Point(18, 417);
+            this.transparent.Name = "transparent";
+            this.transparent.Size = new System.Drawing.Size(91, 17);
+            this.transparent.TabIndex = 21;
+            this.transparent.Text = "Transparency";
+            this.transparent.UseVisualStyleBackColor = true;
+            this.transparent.CheckedChanged += new System.EventHandler(this.transparent_CheckedChanged);
+            // 
             // MiniWindowsUpdateManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(304, 461);
+            this.Controls.Add(this.transparent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.updateMode);
             this.Controls.Add(this.bitsBox);
@@ -198,6 +212,7 @@
             this.Controls.Add(this.mainLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MiniWindowsUpdateManager";
+            this.Opacity = 0.95D;
             this.Text = "MiniWUManager";
             this.Load += new System.EventHandler(this.MiniWindowsUpdateManager_Load_1);
             this.ResumeLayout(false);
@@ -219,6 +234,7 @@
         private System.Windows.Forms.CheckBox bitsBox;
         private System.Windows.Forms.ComboBox updateMode;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox transparent;
     }
 }
 

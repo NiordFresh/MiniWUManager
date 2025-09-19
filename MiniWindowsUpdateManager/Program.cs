@@ -5,6 +5,7 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MiniWindowsUpdateManager
 {
     internal static class Program
@@ -14,9 +15,10 @@ namespace MiniWindowsUpdateManager
         static void Main()
         {
 
+            // need to be updated soon...
             if (!IsAdm())
             {
-                MessageBox.Show("run as an admin!");
+                MessageBox.Show("run as an admin!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             Application.EnableVisualStyles();

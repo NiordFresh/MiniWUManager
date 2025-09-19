@@ -13,10 +13,9 @@ namespace MiniWindowsUpdateManager
 {
     public partial class MiniWindowsUpdateManager : Form
     {
-        private DateTime chooseDate; 
+        private DateTime chooseDate;
         private Size orgSize;
         private bool msgInit = true;
-
 
         public MiniWindowsUpdateManager()
         {
@@ -30,7 +29,6 @@ namespace MiniWindowsUpdateManager
             applybutton.FlatAppearance.BorderSize = 0;
 
             this.Load += MiniWindowsUpdateManager_Load;
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -39,7 +37,6 @@ namespace MiniWindowsUpdateManager
             {
                 this.Width = 320;
                 this.Height = 500;
-
             }
             else
             {
@@ -49,7 +46,6 @@ namespace MiniWindowsUpdateManager
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            
             chooseDate = e.Start;
             string date = chooseDate.ToString("yyyy-MM-dd");
         }
@@ -66,17 +62,16 @@ namespace MiniWindowsUpdateManager
                 key.SetValue("PauseQualityUpdatesEndTime", data, RegistryValueKind.String);
                 key.SetValue("PauseUpdatesStartTime", "2025-01-01T00:00:01Z", RegistryValueKind.String);
                 key.SetValue("PendingRebootStartTime", "2025-01-01T00:00:01Z", RegistryValueKind.String);
-                MessageBox.Show("Done!");
+                MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void updateMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             int au = 2;
 
-            switch (updateMode.SelectedIndex) {
+            switch (updateMode.SelectedIndex)
+            {
                 case 0:
                     au = 1;
                     break;
@@ -92,26 +87,23 @@ namespace MiniWindowsUpdateManager
                 case 4:
                     au = 5;
                     break;
-
             }
 
-
-            try {
+            try
+            {
                 using (RegistryKey key = Registry.LocalMachine.CreateSubKey(
                     @"SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"))
                 {
                     if (key != null)
                     {
                         key.SetValue("AUOptions", au, RegistryValueKind.DWord);
-
-
-                        MessageBox.Show("Done!");
+                        MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error" + ex.Message);
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -129,17 +121,14 @@ namespace MiniWindowsUpdateManager
                         {
                             key.SetValue("TargetReleaseVersionInfo", "1507", RegistryValueKind.String);
                             key.SetValue("TargetReleaseVersion", 1, RegistryValueKind.DWord);
-
-
-                            MessageBox.Show("Done!");
+                            MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             else
             {
@@ -156,17 +145,17 @@ namespace MiniWindowsUpdateManager
                             if (key.GetValue("TargetReleaseVersion") != null)
                                 key.DeleteValue("TargetReleaseVersion");
 
-                            MessageBox.Show("Done!");
+                            MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("not founded!");
+                            MessageBox.Show("Not Founded!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -184,17 +173,14 @@ namespace MiniWindowsUpdateManager
                         if (key != null)
                         {
                             key.SetValue("ExcludeWUDriversInQualityUpdate", 1, RegistryValueKind.DWord);
-
-
-                            MessageBox.Show("Done!");
+                            MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             else
             {
@@ -207,17 +193,17 @@ namespace MiniWindowsUpdateManager
                         {
                             if (key.GetValue("ExcludeWUDriversInQualityUpdate") != null)
                                 key.DeleteValue("ExcludeWUDriversInQualityUpdate");
-                            MessageBox.Show("Done!");
+                            MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("not founded!");
+                            MessageBox.Show("Not Founded!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -235,13 +221,13 @@ namespace MiniWindowsUpdateManager
                     if (key != null)
                     {
                         key.SetValue("Start", startValue, RegistryValueKind.DWord);
-                        MessageBox.Show("Done!");
+                        MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -258,13 +244,13 @@ namespace MiniWindowsUpdateManager
                     if (key != null)
                     {
                         key.SetValue("Start", startValue, RegistryValueKind.DWord);
-                        MessageBox.Show("Done!");
+                        MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -281,20 +267,20 @@ namespace MiniWindowsUpdateManager
                     if (key != null)
                     {
                         key.SetValue("Start", startValue, RegistryValueKind.DWord);
-                        MessageBox.Show("Done!");
+                        MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
-
         private void MiniWindowsUpdateManager_Load(object sender, EventArgs e)
         {
+            TransparentSettings();
+            LoadTransparencyState();
             LoadServiceState(@"SYSTEM\CurrentControlSet\Services\wuauserv", wuauservBox);
             LoadServiceState(@"SYSTEM\CurrentControlSet\Services\dosvc", doSvcBox);
             LoadServiceState(@"SYSTEM\CurrentControlSet\Services\BITS", bitsBox);
@@ -302,6 +288,63 @@ namespace MiniWindowsUpdateManager
             LoadDriverUpdateState(driverUpdateBox);
 
             msgInit = false;
+        }
+
+        private void TransparentSettings()
+        {
+            try
+            {
+                using (RegistryKey key = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\NiordFresh\MiniWUManager\set"))
+                {
+                    if (key != null)
+                    {
+                        object value = key.GetValue("transparency");
+                        if (value == null)
+                        {
+                            key.SetValue("transparency", 1, RegistryValueKind.DWord);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void LoadTransparencyState()
+        {
+            try
+            {
+                using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\NiordFresh\MiniWUManager\set", false))
+                {
+                    if (key != null)
+                    {
+                        object value = key.GetValue("transparency");
+                        if (value != null && value is int transparencyValue)
+                        {
+                            transparent.Checked = (transparencyValue == 1);
+
+                            ApplyTransparency(transparencyValue == 1);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ApplyTransparency(bool isTransparent)
+        {
+            if (isTransparent)
+            {
+                this.Opacity = 0.95;
+            }
+            else
+            {
+                this.Opacity = 1.0;
+            }
         }
 
         private void LoadServiceState(string registryPath, CheckBox checkBox)
@@ -314,8 +357,7 @@ namespace MiniWindowsUpdateManager
                     {
                         object value = key.GetValue("Start");
                         if (value != null && value is int startValue)
-                        { 
-
+                        {
                             checkBox.Checked = (startValue == 4);
                         }
                     }
@@ -323,7 +365,7 @@ namespace MiniWindowsUpdateManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error" + ex.Message);
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -344,7 +386,7 @@ namespace MiniWindowsUpdateManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error " + ex.Message);
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -364,7 +406,7 @@ namespace MiniWindowsUpdateManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error " + ex.Message);
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -372,6 +414,27 @@ namespace MiniWindowsUpdateManager
         {
 
         }
+        private void transparent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (msgInit) return;
+            int trs = transparent.Checked ? 1 : 0;
+            try
+            {
+                using (RegistryKey key = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\NiordFresh\MiniWUManager\set"))
+                {
+                    if (key != null)
+                    {
+                        key.SetValue("transparency", trs, RegistryValueKind.DWord);
+                        ApplyTransparency(transparent.Checked);
+
+                        MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
-
