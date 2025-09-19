@@ -20,10 +20,9 @@ It’s the perfect tool for power users, system administrators, and anyone who w
 ---
 # ⚙️ Requirements
 ```
-- Desgined mainly for Windows 10 (1809+) / Windows 11 (21H2+)
+- Windows 10 (1809+) / Windows 11 (21H2+)
 - .NET Framework 4.7.2 or Higher
 - Administrator privileges
-```
 ```
 ---
 # 📜 Licence
