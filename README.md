@@ -1,6 +1,7 @@
 ![main](https://github.com/user-attachments/assets/54d3310e-b116-4258-806e-94bc7be7bbab)
 
 # MiniWUManager
+
 MiniWUManager is a lightweight and portable tool for Windows systems that gives you full control over Windows Update.
 Built with C# and WinForms, it provides a simple GUI to manage updates without the hassle of digging through system settings or group policies.
 ---
