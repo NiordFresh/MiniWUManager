@@ -36,6 +36,8 @@
             this.updateMode = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.transparent = new System.Windows.Forms.CheckBox();
+            this.wu_button = new System.Windows.Forms.Button();
+            this.temp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainLabel
@@ -71,7 +73,7 @@
             // 
             // applybutton
             // 
-            this.applybutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.applybutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.applybutton.FlatAppearance.BorderSize = 0;
             this.applybutton.ForeColor = System.Drawing.Color.White;
             this.applybutton.Location = new System.Drawing.Point(18, 203);
@@ -86,7 +88,7 @@
             // 
             this.featureUpdateBox.AutoSize = true;
             this.featureUpdateBox.ForeColor = System.Drawing.Color.White;
-            this.featureUpdateBox.Location = new System.Drawing.Point(18, 300);
+            this.featureUpdateBox.Location = new System.Drawing.Point(18, 292);
             this.featureUpdateBox.Name = "featureUpdateBox";
             this.featureUpdateBox.Size = new System.Drawing.Size(130, 17);
             this.featureUpdateBox.TabIndex = 9;
@@ -98,7 +100,7 @@
             // 
             this.secondLabel.AutoSize = true;
             this.secondLabel.ForeColor = System.Drawing.Color.White;
-            this.secondLabel.Location = new System.Drawing.Point(15, 248);
+            this.secondLabel.Location = new System.Drawing.Point(15, 245);
             this.secondLabel.Name = "secondLabel";
             this.secondLabel.Size = new System.Drawing.Size(58, 13);
             this.secondLabel.TabIndex = 13;
@@ -108,7 +110,7 @@
             // 
             this.driverUpdateBox.AutoSize = true;
             this.driverUpdateBox.ForeColor = System.Drawing.Color.White;
-            this.driverUpdateBox.Location = new System.Drawing.Point(154, 300);
+            this.driverUpdateBox.Location = new System.Drawing.Point(154, 292);
             this.driverUpdateBox.Name = "driverUpdateBox";
             this.driverUpdateBox.Size = new System.Drawing.Size(122, 17);
             this.driverUpdateBox.TabIndex = 15;
@@ -120,7 +122,7 @@
             // 
             this.wuauservBox.AutoSize = true;
             this.wuauservBox.ForeColor = System.Drawing.Color.White;
-            this.wuauservBox.Location = new System.Drawing.Point(18, 332);
+            this.wuauservBox.Location = new System.Drawing.Point(18, 320);
             this.wuauservBox.Name = "wuauservBox";
             this.wuauservBox.Size = new System.Drawing.Size(188, 17);
             this.wuauservBox.TabIndex = 16;
@@ -132,7 +134,7 @@
             // 
             this.doSvcBox.AutoSize = true;
             this.doSvcBox.ForeColor = System.Drawing.Color.White;
-            this.doSvcBox.Location = new System.Drawing.Point(18, 355);
+            this.doSvcBox.Location = new System.Drawing.Point(18, 343);
             this.doSvcBox.Name = "doSvcBox";
             this.doSvcBox.Size = new System.Drawing.Size(175, 17);
             this.doSvcBox.TabIndex = 17;
@@ -144,7 +146,7 @@
             // 
             this.bitsBox.AutoSize = true;
             this.bitsBox.ForeColor = System.Drawing.Color.White;
-            this.bitsBox.Location = new System.Drawing.Point(18, 378);
+            this.bitsBox.Location = new System.Drawing.Point(18, 366);
             this.bitsBox.Name = "bitsBox";
             this.bitsBox.Size = new System.Drawing.Size(166, 17);
             this.bitsBox.TabIndex = 18;
@@ -163,7 +165,7 @@
             "Automatically download and notify for installation",
             "Automatically download and install at a scheduled time",
             "Required automatic updates (Windows Enterprise)"});
-            this.updateMode.Location = new System.Drawing.Point(18, 264);
+            this.updateMode.Location = new System.Drawing.Point(18, 260);
             this.updateMode.Name = "updateMode";
             this.updateMode.Size = new System.Drawing.Size(267, 21);
             this.updateMode.TabIndex = 19;
@@ -172,8 +174,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.label1.Location = new System.Drawing.Point(171, 439);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.label1.Location = new System.Drawing.Point(165, 433);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 20;
@@ -183,7 +185,7 @@
             // 
             this.transparent.AutoSize = true;
             this.transparent.ForeColor = System.Drawing.Color.White;
-            this.transparent.Location = new System.Drawing.Point(18, 417);
+            this.transparent.Location = new System.Drawing.Point(18, 429);
             this.transparent.Name = "transparent";
             this.transparent.Size = new System.Drawing.Size(91, 17);
             this.transparent.TabIndex = 21;
@@ -191,12 +193,40 @@
             this.transparent.UseVisualStyleBackColor = true;
             this.transparent.CheckedChanged += new System.EventHandler(this.transparent_CheckedChanged);
             // 
+            // wu_button
+            // 
+            this.wu_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.wu_button.FlatAppearance.BorderSize = 0;
+            this.wu_button.ForeColor = System.Drawing.Color.White;
+            this.wu_button.Location = new System.Drawing.Point(18, 396);
+            this.wu_button.Name = "wu_button";
+            this.wu_button.Size = new System.Drawing.Size(130, 23);
+            this.wu_button.TabIndex = 23;
+            this.wu_button.Text = "Open Windows Update";
+            this.wu_button.UseVisualStyleBackColor = false;
+            this.wu_button.Click += new System.EventHandler(this.wu_button_Click);
+            // 
+            // temp
+            // 
+            this.temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.temp.FlatAppearance.BorderSize = 0;
+            this.temp.ForeColor = System.Drawing.Color.White;
+            this.temp.Location = new System.Drawing.Point(157, 396);
+            this.temp.Name = "temp";
+            this.temp.Size = new System.Drawing.Size(130, 23);
+            this.temp.TabIndex = 24;
+            this.temp.Text = "Clean WU Temp Files";
+            this.temp.UseVisualStyleBackColor = false;
+            this.temp.Click += new System.EventHandler(this.temp_Click);
+            // 
             // MiniWindowsUpdateManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(304, 461);
+            this.Controls.Add(this.temp);
+            this.Controls.Add(this.wu_button);
             this.Controls.Add(this.transparent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.updateMode);
@@ -235,6 +265,8 @@
         private System.Windows.Forms.ComboBox updateMode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox transparent;
+        private System.Windows.Forms.Button wu_button;
+        private System.Windows.Forms.Button temp;
     }
 }
 

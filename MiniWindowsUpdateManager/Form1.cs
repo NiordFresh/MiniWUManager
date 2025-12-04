@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace MiniWindowsUpdateManager
 {
@@ -27,6 +28,10 @@ namespace MiniWindowsUpdateManager
             orgSize = this.Size;
             applybutton.FlatStyle = FlatStyle.Flat;
             applybutton.FlatAppearance.BorderSize = 0;
+            temp.FlatStyle = FlatStyle.Flat;
+            temp.FlatAppearance.BorderSize = 0;
+            wu_button.FlatStyle = FlatStyle.Flat;
+            wu_button.FlatAppearance.BorderSize = 0;
 
             this.Load += MiniWindowsUpdateManager_Load;
         }
@@ -253,6 +258,30 @@ namespace MiniWindowsUpdateManager
                 MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // unused code
+
+        //private void usosvcBox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (msgInit) return;
+        //    int startValue = usosvcBox.Checked ? 4 : 2;
+
+        //    try
+        //    {
+        //        using (RegistryKey key = Registry.LocalMachine.CreateSubKey(
+        //            @"SYSTEM\CurrentControlSet\Services\UsoSvc", true))
+        //        {
+        //            if (key != null)
+        //            {
+        //                key.SetValue("Start", startValue, RegistryValueKind.DWord);
+        //                MessageBox.Show("Done!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void bitsBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -283,6 +312,7 @@ namespace MiniWindowsUpdateManager
             LoadTransparencyState();
             LoadServiceState(@"SYSTEM\CurrentControlSet\Services\wuauserv", wuauservBox);
             LoadServiceState(@"SYSTEM\CurrentControlSet\Services\dosvc", doSvcBox);
+            //LoadServiceState(@"SYSTEM\CurrentControlSet\Services\UsoSvc", usosvcBox);
             LoadServiceState(@"SYSTEM\CurrentControlSet\Services\BITS", bitsBox);
             LoadFeatureUpdateState(featureUpdateBox);
             LoadDriverUpdateState(driverUpdateBox);
@@ -435,6 +465,77 @@ namespace MiniWindowsUpdateManager
             {
                 MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void wu_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("ms-settings:windowsupdate");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void temp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                StopService("wuauserv");
+                StopService("bits");
+                StopService("dosvc");
+
+
+                string[] paths =
+                {
+            @"C:\Windows\SoftwareDistribution\Download",
+            @"C:\Windows\SoftwareDistribution\DataStore",
+            @"C:\Windows\SoftwareDistribution\SelfUpdate"
+        };
+
+                foreach (string path in paths)
+                {
+                    if (Directory.Exists(path))
+                    {
+                        try
+                        {
+                            Directory.Delete(path, true);
+                        }
+                        catch { }
+                    }
+
+                    try
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    catch { }
+                }
+
+                StartService("wuauserv");
+                StartService("bits");
+                StartService("dosvc");
+
+                MessageBox.Show("Foldery Windows Update zostały wyczyszczone!", "",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void StartService(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void StopService(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
