@@ -39,4 +39,4 @@ It’s the perfect tool for power users, system administrators, and anyone who w
 This project is licensed under the GPL-3.0 License. See the LICENSE file for more information.
 ```
 
-> ⚠️ **Disclaimer**: MiniWUManager is an independent tool. Edgeify is not affiliated with Microsoft Corporation.
+> ⚠️ **Disclaimer**: MiniWUManager is an independent tool. MiniWUManager is not affiliated with Microsoft Corporation.
